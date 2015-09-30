@@ -25,17 +25,17 @@
 			<scope>provided</scope>
 		</dependency>
 
-		<!-- webwork -->
+		<!-- struts -->
 		<dependency>
-			<groupId>opensymphony</groupId>
-			<artifactId>webwork</artifactId>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts2-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts2-spring-plugin</artifactId>
 		</dependency>
 
 		<!-- velocity -->
-		<dependency>
-			<groupId>commons-collections</groupId>
-			<artifactId>commons-collections</artifactId>
-		</dependency>
 		<dependency>
 			<groupId>commons-digester</groupId>
 			<artifactId>commons-digester</artifactId>
@@ -45,7 +45,7 @@
 			<artifactId>velocity</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>velocity-tools</groupId>
+			<groupId>org.apache.velocity</groupId>
 			<artifactId>velocity-tools</artifactId>
 		</dependency>
 	</dependencies>

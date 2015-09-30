@@ -24,6 +24,8 @@ public final class EncryptUtil {
 
 	private static final String CHARSET_UTF8 = "UTF-8";
 
+	private static final String SECRET_KEY = "papa2-inc";
+
 	private EncryptUtil() {
 
 	}
@@ -56,11 +58,15 @@ public final class EncryptUtil {
 		return byte2hex(bytes);
 	}
 
+	public static String encryptHMAC(String data) throws IOException {
+		return encryptHMAC(data, SECRET_KEY);
+	}
+
 	public static String encryptHMAC(String data, String secret) throws IOException {
 		byte[] bytes = null;
 
 		try {
-			SecretKey secretKey = new SecretKeySpec(secret.getBytes(CHARSET_UTF8), "HmacMD5");
+			SecretKey secretKey = new SecretKeySpec(secret.getBytes(CHARSET_UTF8), "HmacSHA1");
 			Mac mac = Mac.getInstance(secretKey.getAlgorithm());
 			mac.init(secretKey);
 			bytes = mac.doFinal(data.getBytes(CHARSET_UTF8));
@@ -80,7 +86,7 @@ public final class EncryptUtil {
 			if (hex.length() == 1) {
 				sign.append("0");
 			}
-			sign.append(hex.toUpperCase());
+			sign.append(hex);
 		}
 
 		return sign.toString();

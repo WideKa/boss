@@ -30,22 +30,20 @@
 			<artifactId>commons-lang</artifactId>
 		</dependency>
 
-		<!-- httpclient -->
+		<!-- joda -->
 		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpclient</artifactId>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
 		</dependency>
 
-		<!-- jxl -->
+		<!-- dom4j -->
 		<dependency>
-			<groupId>net.sourceforge.jexcelapi</groupId>
-			<artifactId>jxl</artifactId>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
 		</dependency>
-
-		<!-- spring -->
 		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring</artifactId>
+			<groupId>jaxen</groupId>
+			<artifactId>jaxen</artifactId>
 		</dependency>
 
 		<!-- json -->
@@ -54,10 +52,28 @@
 			<artifactId>json</artifactId>
 		</dependency>
 
-		<!-- webwork -->
+		<!-- jxl -->
 		<dependency>
-			<groupId>opensymphony</groupId>
-			<artifactId>webwork</artifactId>
+			<groupId>net.sourceforge.jexcelapi</groupId>
+			<artifactId>jxl</artifactId>
+		</dependency>
+
+		<!-- httpclient -->
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+		</dependency>
+
+		<!-- spring -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+		</dependency>
+
+		<!-- struts -->
+		<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts2-core</artifactId>
 		</dependency>
 
 		<!-- log4j -->
