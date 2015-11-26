@@ -24,7 +24,6 @@
 
 			<interceptor name="authentication" class="authenticationInterceptor" />
 			<interceptor name="actionMonitor" class="actionMonitorInterceptor" />
-			<interceptor name="funAction" class="funActionInterceptor" />
 
 			<interceptor-stack name="authenticationStack">
 				<interceptor-ref name="defaultStack" />
@@ -32,8 +31,6 @@
 				<interceptor-ref name="authentication" />
 				<!-- 操作日志 -->
 				<interceptor-ref name="actionMonitor" />
-				<!-- 权限点 -->
-				<interceptor-ref name="funAction" />
 			</interceptor-stack>
 		</interceptors>
 
