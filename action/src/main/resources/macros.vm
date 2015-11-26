@@ -65,8 +65,6 @@
 			<script src="$!{env.imgUrl}/jquery.tools/jquery.tools.min.js"></script>
 		#elseif($key == 'jquery.ui')
 			<script src="$!{env.imgUrl}/jquery.ui/jquery-ui.min.js"></script>
-		#elseif($key == 'messenger')
-			<script src="$!{env.imgUrl}/messenger/js/messenger.min.js"></script>
 		#elseif($key == 'spin')
 			<script src="$!{env.imgUrl}/spin/spin.min.js"></script>
 		#end
@@ -95,9 +93,6 @@
 			<link rel="stylesheet" href="$!{env.imgUrl}/iosbadge/iosbadge.css" />
 		#elseif($key == 'jquery.mobile')
 			<link rel="stylesheet" href="$!{env.imgUrl}/jquery.mobile/jquery.mobile-1.4.4.min.css" />
-		#elseif($key == 'messenger')
-			<link rel="stylesheet" href="$!{env.imgUrl}/messenger/css/messenger.css?t=20141208" />
-			<link rel="stylesheet" href="$!{env.imgUrl}/messenger/css/messenger-theme-flat.css" />
 		#elseif($key == 'nav')
 			<link rel="stylesheet" href="$!{env.imgUrl}/css/nav/nav-global.css" />
 		#end
