@@ -8,7 +8,7 @@ import com.wideka.boss.monitor.dao.IMethodMonitorDao;
 
 /**
  * 
- * @author xujiakun
+ * @author JiakunXu
  * 
  */
 public class MethodMonitorDaoImpl extends BaseDaoImpl implements IMethodMonitorDao {

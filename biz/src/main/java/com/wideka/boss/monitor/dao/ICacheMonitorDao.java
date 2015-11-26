@@ -6,7 +6,7 @@ import com.wideka.boss.api.cache.bo.CacheStats;
 
 /**
  * 
- * @author xujiakun
+ * @author JiakunXu
  * 
  */
 public interface ICacheMonitorDao {
