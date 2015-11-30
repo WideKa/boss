@@ -35,8 +35,6 @@
 			<script src="$!{env.imgUrl}/angular/angular.min.js"></script>
 		#elseif($key == 'bootstrap')
 			<script src="$!{env.imgUrl}/bootstrap/js/bootstrap.min.js"></script>
-		#elseif($key == 'bootstrap.docs')
-			<script src="$!{env.imgUrl}/bootstrap/js/docs.min.js"></script>
 		#elseif($key == 'bootstrap.list.filter')
 			<script src="$!{env.imgUrl}/bootstrap.list.filter/bootstrap-list-filter.min.js"></script>
 		#elseif($key == 'bootstrap3.wysiwyg')
@@ -81,8 +79,6 @@
                 <script src="$!{env.imgUrl}/bootstrap/js/html5shiv.min.js"></script>
                 <script src="$!{env.imgUrl}/bootstrap/js/respond.min.js"></script>
             <![endif]-->
-		#elseif($key == 'bootstrap.docs')
-			<link rel="stylesheet" href="$!{env.imgUrl}/bootstrap/css/docs.min.css" />
 		#elseif($key == 'bootstrap3.wysiwyg')
 			<link rel="stylesheet" href="$!{env.imgUrl}/bootstrap3.wysiwyg/bootstrap3-wysihtml5.min.css" />
 		#elseif($key == 'flexpaper')
