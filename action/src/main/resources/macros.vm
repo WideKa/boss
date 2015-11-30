@@ -37,6 +37,8 @@
 			<script src="$!{env.imgUrl}/bootstrap/js/bootstrap.min.js"></script>
 		#elseif($key == 'bootstrap.list.filter')
 			<script src="$!{env.imgUrl}/bootstrap.list.filter/bootstrap-list-filter.min.js"></script>
+		#elseif($key == 'bootstrap.table')
+			<script src="$!{env.imgUrl}/bootstrap.table/bootstrap-table.min.js"></script>
 		#elseif($key == 'bootstrap3.wysiwyg')
 			<script src="$!{env.imgUrl}/bootstrap3.wysiwyg/bootstrap3-wysihtml5.all.min.js"></script>
 			<script src="$!{env.imgUrl}/bootstrap3.wysiwyg/locales/bootstrap-wysihtml5.zh-CN.js"></script>
@@ -79,6 +81,8 @@
                 <script src="$!{env.imgUrl}/bootstrap/js/html5shiv.min.js"></script>
                 <script src="$!{env.imgUrl}/bootstrap/js/respond.min.js"></script>
             <![endif]-->
+		#elseif($key == 'bootstrap.table')
+			<link rel="stylesheet" href="$!{env.imgUrl}/bootstrap.table/bootstrap-table.min.css" />
 		#elseif($key == 'bootstrap3.wysiwyg')
 			<link rel="stylesheet" href="$!{env.imgUrl}/bootstrap3.wysiwyg/bootstrap3-wysihtml5.min.css" />
 		#elseif($key == 'flexpaper')
@@ -108,7 +112,7 @@
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
     
-      ga('create', '', 'papa2-inc.com');
+      ga('create', '', 'wideka.com');
 	  ga('require', 'displayfeatures');
       ga('send', 'pageview');
     

@@ -34,6 +34,8 @@ public class User extends SearchInfo {
 	 */
 	private String password;
 
+	private String state;
+
 	public String getUserId() {
 		return userId;
 	}
@@ -64,6 +66,14 @@ public class User extends SearchInfo {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
 	}
 
 }
