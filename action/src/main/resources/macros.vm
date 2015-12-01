@@ -39,6 +39,10 @@
 			<script src="$!{env.imgUrl}/bootstrap.list.filter/bootstrap-list-filter.min.js"></script>
 		#elseif($key == 'bootstrap.table')
 			<script src="$!{env.imgUrl}/bootstrap.table/bootstrap-table.min.js"></script>
+		#elseif($key == 'bootstrap.table.editable')
+			<script src="$!{env.imgUrl}/bootstrap.table/extensions/editable/bootstrap-table-editable.min.js"></script>
+		#elseif($key == 'bootstrap3.editable')
+			<script src="$!{env.imgUrl}/bootstrap3.editable/js/bootstrap-editable.min.js"></script>
 		#elseif($key == 'bootstrap3.wysiwyg')
 			<script src="$!{env.imgUrl}/bootstrap3.wysiwyg/bootstrap3-wysihtml5.all.min.js"></script>
 			<script src="$!{env.imgUrl}/bootstrap3.wysiwyg/locales/bootstrap-wysihtml5.zh-CN.js"></script>
@@ -83,6 +87,8 @@
             <![endif]-->
 		#elseif($key == 'bootstrap.table')
 			<link rel="stylesheet" href="$!{env.imgUrl}/bootstrap.table/bootstrap-table.min.css" />
+		#elseif($key == 'bootstrap3.editable')
+			<link rel="stylesheet" href="$!{env.imgUrl}/bootstrap3.editable/css/bootstrap-editable.css" />
 		#elseif($key == 'bootstrap3.wysiwyg')
 			<link rel="stylesheet" href="$!{env.imgUrl}/bootstrap3.wysiwyg/bootstrap3-wysihtml5.min.css" />
 		#elseif($key == 'flexpaper')

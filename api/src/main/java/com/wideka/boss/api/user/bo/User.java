@@ -5,9 +5,8 @@ import javax.xml.bind.annotation.XmlElement;
 import com.wideka.boss.framework.bo.SearchInfo;
 
 /**
- * user.
  * 
- * @author xujiakun
+ * @author JiakunXu
  * 
  */
 public class User extends SearchInfo {

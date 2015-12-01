@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>$!{env.companyName}</title>
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		#ICON()
+		#CSSM(["bootstrap3.editable", "bootstrap.table", "bootstrap"])
+		#UA()
+	</head>
+	<body>
+		<div class="container">
+            <h1></h1>
+                <div id="toolbar">
+                    <button id="remove" class="btn btn-danger" disabled>
+                        <i class="glyphicon glyphicon-remove"></i> Delete
+                    </button>
+                </div>
+                <table id="table"
+                       data-toolbar="#toolbar"
+                       data-search="true"
+                       data-show-refresh="true"
+                       data-show-toggle="false"
+                       data-show-columns="false"
+                       data-show-export="false"
+                       data-detail-view="false"
+                       data-detail-formatter="detailFormatter"
+                       data-minimum-count-columns="2"
+                       data-show-pagination-switch="true"
+                       data-pagination="true"
+                       data-id-field="id"
+                       data-page-list="[10, 25, 50, 100, ALL]"
+                       data-show-footer="false"
+                       data-side-pagination="server"
+                       data-url="$!{env.imgUrl}/js/portal/data2.json"
+                       data-response-handler="responseHandler">
+                </table>
+        </div>
+		
+		#JSM(["jquery", "jquery.cookie", "bootstrap", "bootstrap.table", "bootstrap.table.editable", "bootstrap3.editable"])
+		#JS_ENV_VAL()
+		<script>
+        </script>
+		<script type="text/javascript" src="$!{env.imgUrl}/js/portal/home.js"></script>
+	</body>
+</html>

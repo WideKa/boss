@@ -20,4 +20,8 @@ public class PortalAction extends BaseAction {
 		return SUCCESS;
 	}
 
+	public String home() {
+		return SUCCESS;
+	}
+
 }
