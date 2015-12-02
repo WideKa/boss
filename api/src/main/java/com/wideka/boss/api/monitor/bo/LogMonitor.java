@@ -12,7 +12,7 @@ public class LogMonitor extends SearchInfo {
 
 	private static final long serialVersionUID = 3856860374996367071L;
 
-	private String id;
+	private Long id;
 
 	private String className;
 
@@ -26,11 +26,11 @@ public class LogMonitor extends SearchInfo {
 
 	private String createDate;
 
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

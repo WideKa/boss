@@ -11,7 +11,7 @@ public class Trade extends SearchInfo {
 
 	private static final long serialVersionUID = 6866948669774091844L;
 
-	private String tradeId;
+	private Long tradeId;
 
 	private String tradeNo;
 
@@ -23,11 +23,11 @@ public class Trade extends SearchInfo {
 
 	private String sellerName;
 
-	public String getTradeId() {
+	public Long getTradeId() {
 		return tradeId;
 	}
 
-	public void setTradeId(String tradeId) {
+	public void setTradeId(Long tradeId) {
 		this.tradeId = tradeId;
 	}
 
