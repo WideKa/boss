@@ -43,15 +43,13 @@ public class SearchInfo implements Serializable {
 
 	private int limit = LIMIT;
 
-	private int start;
+	private int offset;
 
 	private String sort;
 
-	private String dir;
+	private String order;
 
 	private String filter;
-
-	private String order;
 
 	private long totalRows;
 
@@ -66,24 +64,12 @@ public class SearchInfo implements Serializable {
 		this.limit = limit;
 	}
 
-	public int getStart() {
-		return start;
+	public int getOffset() {
+		return offset;
 	}
 
-	public void setStart(int start) {
-		this.start = start + 1;
-	}
-
-	public int getEnd() {
-		return this.start + limit;
-	}
-
-	public String getDir() {
-		return dir;
-	}
-
-	public void setDir(String dir) {
-		this.dir = dir;
+	public void setOffset(int offset) {
+		this.offset = offset;
 	}
 
 	public String getSort() {
@@ -92,6 +78,14 @@ public class SearchInfo implements Serializable {
 
 	public void setSort(String sort) {
 		this.sort = sort;
+	}
+
+	public String getOrder() {
+		return order;
+	}
+
+	public void setOrder(String order) {
+		this.order = order;
 	}
 
 	public long getTotalRows() {
@@ -168,14 +162,6 @@ public class SearchInfo implements Serializable {
 
 	public void setFilter(String filter) {
 		this.filter = filter;
-	}
-
-	public String getOrder() {
-		return order;
-	}
-
-	public void setOrder(String order) {
-		this.order = order;
 	}
 
 }

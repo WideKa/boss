@@ -133,8 +133,8 @@ public class JSONResult implements Result, StrutsStatics {
 			if (!"".equals(fieldName)) {
 				Field total = action.getClass().getDeclaredField(result.total());
 				total.setAccessible(true);
-				json.insert(0, "{values:");
-				json.append(",total:");
+				json.insert(0, "{\"rows\":");
+				json.append(",\"total\":");
 				json.append(total.get(action));
 				json.append("}");
 			}

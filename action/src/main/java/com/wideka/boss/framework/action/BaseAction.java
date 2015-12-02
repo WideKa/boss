@@ -70,9 +70,11 @@ public class BaseAction extends ActionSupport {
 
 	private int limit = LIMIT;
 
+	private int offset;
+
 	private String sort;
 
-	private String dir;
+	private String order;
 
 	private int start;
 
@@ -101,10 +103,10 @@ public class BaseAction extends ActionSupport {
 	}
 
 	public <T extends SearchInfo> T getSearchInfo(T info) {
-		info.setStart(start);
-		info.setDir(dir);
 		info.setSort(sort);
+		info.setOrder(order);
 		info.setLimit(limit);
+		info.setOffset(offset);
 		info.setName(name);
 		info.setCode(code);
 		info.setGmtStart(gmtStart);
@@ -198,6 +200,14 @@ public class BaseAction extends ActionSupport {
 		this.limit = limit;
 	}
 
+	public int getOffset() {
+		return offset;
+	}
+
+	public void setOffset(int offset) {
+		this.offset = offset;
+	}
+
 	public String getSort() {
 		return sort;
 	}
@@ -206,12 +216,12 @@ public class BaseAction extends ActionSupport {
 		this.sort = sort;
 	}
 
-	public String getDir() {
-		return dir;
+	public String getOrder() {
+		return order;
 	}
 
-	public void setDir(String dir) {
-		this.dir = dir;
+	public void setOrder(String order) {
+		this.order = order;
 	}
 
 	public int getStart() {

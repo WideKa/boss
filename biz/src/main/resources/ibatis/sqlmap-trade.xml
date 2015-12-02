@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="trade">
+	
+	<typeAlias alias="trade" type="com.wideka.boss.api.trade.bo.Trade" />
+	
+	<select id="getTradeCount" parameterClass="trade" resultClass="java.lang.Integer">
+	<![CDATA[
+		SELECT COUNT(1)
+		  FROM basis_tb_trade t
+		 WHERE t.STATE= 'U'
+	]]>
+	</select>
+	
+	<select id="getTradeList" parameterClass="trade" resultClass="trade">
+	<![CDATA[
+		SELECT t.TRADE_ID AS tradeId,
+			   t.TRADE_NO AS tradeNo,
+			   DATE_FORMAT(t.TRADE_DATE, '%Y-%m-%d %T') AS tradeDate,
+			   p.ITEM_NAME AS itemName,
+			   q.SELLER_NAME AS sellerName
+		  FROM basis_tb_trade t,
+			   basis_tb_item p,
+			   basis_tb_seller q
+		 WHERE t.ITEM_ID= p.ITEM_ID
+		   AND p.SELLER_ID= q.SELLER_ID
+	]]>
+		<dynamic>
+			<isEmpty property="sort">
+			<![CDATA[ ORDER BY TRADE_ID desc ]]>
+			</isEmpty>
+			<isNotEmpty property="sort">
+			<![CDATA[ ORDER BY $sort$ $order$ ]]>
+			</isNotEmpty>
+		</dynamic>
+	<![CDATA[
+		LIMIT $limit$ OFFSET $offset$
+	]]>
+	</select>
+	
+</sqlMap>

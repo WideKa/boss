@@ -5,7 +5,7 @@ function initTable() {
 		height : getHeight(),
 		columns : [[{
 							title : '序号',
-							field : 'id',
+							field : 'tradeId',
 							rowspan : 2,
 							align : 'center',
 							valign : 'middle',
@@ -23,15 +23,15 @@ function initTable() {
 							colspan : 2,
 							align : 'center'
 						}], [{
-							field : 'name',
+							field : 'itemName',
 							title : '商品信息',
 							align : 'center'
 						}, {
-							field : 'price',
+							field : 'sellerName',
 							title : '卖家信息',
 							align : 'center'
 						}, {
-							field : 'name',
+							field : 'tradeNo',
 							title : '交易单号',
 							sortable : true,
 							align : 'center',
@@ -53,7 +53,7 @@ function initTable() {
 								}
 							}
 						}, {
-							field : 'name',
+							field : 'tradeDate',
 							title : '交易时间',
 							sortable : true,
 							align : 'center',
