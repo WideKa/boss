@@ -75,8 +75,10 @@ public class TradeServiceImpl implements ITradeService {
 			return result;
 		}
 
-		if (StringUtils.isEmpty(tradeNo)) {
+		if (StringUtils.isNotBlank(tradeNo)) {
 			trade.setTradeNo(tradeNo.trim());
+		} else {
+			trade.setTradeNo("");
 		}
 
 		if (StringUtils.isEmpty(modifyUser)) {
@@ -110,16 +112,18 @@ public class TradeServiceImpl implements ITradeService {
 			return result;
 		}
 
-		if (StringUtils.isEmpty(tradeDate)) {
+		if (StringUtils.isNotBlank(tradeDate)) {
 			try {
-				DateUtil.datetime(tradeDate, DateUtil.DEFAULT_DATE_FORMAT);
+				DateUtil.datetime(tradeDate.trim(), DateUtil.DEFAULT_DATE_FORMAT);
 			} catch (Exception e) {
 
 				result.setCode("交易时间格式不匹配。");
 				return result;
 			}
 
-			trade.setTradeDate(tradeDate);
+			trade.setTradeDate(tradeDate.trim());
+		} else {
+			trade.setTradeDate("0000-00-00");
 		}
 
 		if (StringUtils.isEmpty(modifyUser)) {

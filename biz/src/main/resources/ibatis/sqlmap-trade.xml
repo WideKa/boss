@@ -52,9 +52,14 @@
 			<isNotNull property="tradeNo" prepend=",">
 			<![CDATA[ t.trade_no = #tradeNo# ]]>
 			</isNotNull>
-			<isNotNull property="tradeDate" prepend=",">
-			<![CDATA[ t.trade_date = STR_TO_DATE( #tradeDate#, '%Y-%m-%d') ]]>
-			</isNotNull>
+			<isNotEmpty property="tradeDate" prepend=",">
+				<isEqual property="tradeDate" compareValue="0000-00-00">
+				<![CDATA[ t.trade_date = null ]]>
+				</isEqual>
+				<isNotEqual property="tradeDate" compareValue="0000-00-00">
+				<![CDATA[ t.trade_date = STR_TO_DATE( #tradeDate#, '%Y-%m-%d') ]]>
+				</isNotEqual>
+			</isNotEmpty>
 		</dynamic>
 	<![CDATA[
 		 WHERE t.trade_id = #tradeId#

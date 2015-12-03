@@ -35,6 +35,13 @@ function initTable() {
 							title : '交易单号',
 							sortable : true,
 							align : 'center',
+							formatter : function(value, row, index) {
+								if (value == undefined) {
+									return "";
+								} else {
+									return value;
+								}
+							},
 							editable : {
 								type : 'text',
 								title : '交易单号',
@@ -68,6 +75,13 @@ function initTable() {
 							title : '交易时间',
 							sortable : true,
 							align : 'center',
+							formatter : function(value, row, index) {
+								if (value == undefined) {
+									return "";
+								} else {
+									return value;
+								}
+							},
 							editable : {
 								type : 'text',
 								title : '交易时间',
