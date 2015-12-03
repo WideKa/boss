@@ -75,7 +75,7 @@ public class TradeServiceImpl implements ITradeService {
 			return result;
 		}
 
-		if (StringUtils.isNotBlank(tradeNo)) {
+		if (StringUtils.isEmpty(tradeNo)) {
 			trade.setTradeNo(tradeNo.trim());
 		}
 
@@ -110,7 +110,7 @@ public class TradeServiceImpl implements ITradeService {
 			return result;
 		}
 
-		if (StringUtils.isNotBlank(tradeDate)) {
+		if (StringUtils.isEmpty(tradeDate)) {
 			try {
 				DateUtil.datetime(tradeDate, DateUtil.DEFAULT_DATE_FORMAT);
 			} catch (Exception e) {
