@@ -8,7 +8,7 @@
 	
 	<select id="getMethodMonitorCount" parameterClass="methodMonitor" resultClass="java.lang.Integer">
 	<![CDATA[
-		SELECT COUNT(1) FROM BASIS.BASIS_TB_MONITOR_METHOD t
+		SELECT COUNT(1) FROM BASIS_TB_MONITOR_METHOD t
 	]]>
 		<dynamic prepend="WHERE">
 			<isNotEmpty property="gmtStart" prepend="and">
@@ -34,7 +34,7 @@
 		  t.method_name            AS methodName,
 		  t.cost,
 		  t.create_date AS createDate
-		FROM BASIS.BASIS_TB_MONITOR_METHOD t
+		FROM BASIS_TB_MONITOR_METHOD t
 	]]>
 		<dynamic prepend="WHERE">
 			<isNotEmpty property="gmtStart" prepend="and">

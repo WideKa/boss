@@ -18,7 +18,9 @@
 	<![CDATA[
 		SELECT t.TRADE_ID AS tradeId,
 			   t.TRADE_NO AS tradeNo,
-			   DATE_FORMAT(t.TRADE_DATE, '%Y-%m-%d %T') AS tradeDate,
+			   DATE_FORMAT(t.TRADE_DATE, '%Y-%m-%d') AS tradeDate,
+			   t.LIKE,
+			   DATE_FORMAT(t.LIKE_DATE, '%Y-%m-%d') AS likeDate,
 			   p.ITEM_NAME AS itemName,
 			   q.SELLER_NAME AS sellerName
 		  FROM basis_tb_trade t,
@@ -39,5 +41,24 @@
 		LIMIT $limit$ OFFSET $offset$
 	]]>
 	</select>
+	
+	<update id="updateTrade" parameterClass="trade">
+	<![CDATA[
+		UPDATE basis_tb_trade t
+		   SET t.modify_date = NOW(),
+			   t.modify_user = #modifyUser#
+	]]>
+		<dynamic>
+			<isNotNull property="tradeNo" prepend=",">
+			<![CDATA[ t.trade_no = #tradeNo# ]]>
+			</isNotNull>
+			<isNotNull property="tradeDate" prepend=",">
+			<![CDATA[ t.trade_date = STR_TO_DATE( #tradeDate#, '%Y-%m-%d') ]]>
+			</isNotNull>
+		</dynamic>
+	<![CDATA[
+		 WHERE t.trade_id = #tradeId#
+	]]>
+	</update>
 	
 </sqlMap>

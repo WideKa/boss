@@ -9,5 +9,13 @@
 			<interceptor-ref name="authenticationStack" />
 		</action>
 		
+		<action name="tradeNo" class="tradeAction" method="updateTradeNo">
+			<interceptor-ref name="authenticationStack" />
+		</action>
+		
+		<action name="tradeDate" class="tradeAction" method="updateTradeDate">
+			<interceptor-ref name="authenticationStack" />
+		</action>
+		
 	</package>
 </struts>

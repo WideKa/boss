@@ -14,7 +14,7 @@ public class CacheStats extends SearchInfo {
 
 	private static final long serialVersionUID = 2587109565600354500L;
 
-	private String id;
+	private Long id;
 
 	/**
 	 * key.
@@ -249,11 +249,11 @@ public class CacheStats extends SearchInfo {
 
 	private Date createDate;
 
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

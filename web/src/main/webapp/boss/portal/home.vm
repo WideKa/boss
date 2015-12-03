@@ -13,7 +13,7 @@
 	</head>
 	<body>
 		<div class="container">
-            <h1></h1>
+            <h1>交易清算系统</h1>
                 <table id="table"
                        data-toolbar="#toolbar"
                        data-search="true"
@@ -34,6 +34,8 @@
                        data-response-handler="responseHandler">
                 </table>
         </div>
+		
+		#parse("/boss/framework/footer.vm")
 		
 		#JSM(["jquery", "jquery.cookie", "bootstrap", "bootstrap.table", "bootstrap.table.editable", "bootstrap3.editable"])
 		#JS_ENV_VAL()

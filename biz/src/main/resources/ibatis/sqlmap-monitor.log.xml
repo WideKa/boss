@@ -8,7 +8,7 @@
 	
 	<select id="getLogMonitorCount" parameterClass="logMonitor" resultClass="java.lang.Integer">
 	<![CDATA[
-		SELECT COUNT(1) FROM BASIS.BASIS_TB_MONITOR_LOG t
+		SELECT COUNT(1) FROM BASIS_TB_MONITOR_LOG t
 	]]>
 		<dynamic prepend="WHERE">
 			<isNotEmpty property="gmtStart" prepend="and">
@@ -30,7 +30,7 @@
 		  t.message             AS MESSAGE,
 		  t.e,
 		  TO_CHAR(t.create_date,'yyyy-mm-dd hh24:mi:ss') AS createDate
-		FROM BASIS.BASIS_TB_MONITOR_LOG t
+		FROM BASIS_TB_MONITOR_LOG t
 	]]>
 		<dynamic prepend="WHERE">
 			<isNotEmpty property="gmtStart" prepend="and">
@@ -47,7 +47,7 @@
 	<insert id="createLogMonitor" parameterClass="logMonitor">
 	<![CDATA[
 		INSERT
-		INTO BASIS.BASIS_TB_MONITOR_LOG
+		INTO BASIS_TB_MONITOR_LOG
 		  (
 			CLASS_NAME,
 			METHOD_NAME,
@@ -87,7 +87,7 @@
 			  t.message              AS MESSAGE,
 			  t.e,
 			  TO_CHAR(t.create_date,'yyyy-mm-dd hh24:mi:ss') AS createDate
-			FROM BASIS.BASIS_TB_MONITOR_LOG t
+			FROM BASIS_TB_MONITOR_LOG t
 			WHERE t.create_date > sysdate - 0.25
 			ORDER BY t.log_monitor_id DESC
 			) row_

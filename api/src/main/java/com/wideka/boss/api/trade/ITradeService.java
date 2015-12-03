@@ -3,6 +3,7 @@ package com.wideka.boss.api.trade;
 import java.util.List;
 
 import com.wideka.boss.api.trade.bo.Trade;
+import com.wideka.boss.framework.bo.BooleanResult;
 
 /**
  * 
@@ -24,5 +25,23 @@ public interface ITradeService {
 	 * @return
 	 */
 	List<Trade> getTradeList(Trade trade);
+
+	/**
+	 * 
+	 * @param tradeId
+	 * @param tradeNo
+	 * @param modifyUser
+	 * @return
+	 */
+	BooleanResult updateTradeNo(String tradeId, String tradeNo, String modifyUser);
+
+	/**
+	 * 
+	 * @param tradeId
+	 * @param tradeDate
+	 * @param modifyUser
+	 * @return
+	 */
+	BooleanResult updateTradeDate(String tradeId, String tradeDate, String modifyUser);
 
 }

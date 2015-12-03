@@ -34,8 +34,8 @@
 	<select id="getActionMonitorCount" parameterClass="actionMonitor" resultClass="java.lang.Integer">
 	<![CDATA[
 		SELECT COUNT(1)
-		FROM BASIS.BASIS_TB_MONITOR_ACTION t,
-		  BASIS.BASIS_tb_user p
+		FROM BASIS_TB_MONITOR_ACTION t,
+		  BASIS_tb_user p
 		WHERE t.user_id = p.user_id
 	]]>
 		<dynamic>
@@ -63,8 +63,8 @@
 		  t.action_name AS actionName,
 		  t.ip,
 		  TO_CHAR(t.create_date,'yyyy-mm-dd hh24:mi:ss') AS createDate
-		FROM BASIS.BASIS_TB_MONITOR_ACTION t,
-		  BASIS.BASIS_tb_user p
+		FROM BASIS_TB_MONITOR_ACTION t,
+		  BASIS_tb_user p
 		WHERE t.user_id = p.user_id
 	]]>
 		<dynamic>

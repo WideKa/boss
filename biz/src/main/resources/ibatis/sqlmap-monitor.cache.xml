@@ -8,7 +8,7 @@
 	
 	<select id="getCacheMonitorCount" parameterClass="cacheStats" resultClass="java.lang.Integer">
 	<![CDATA[
-		select count(1) from BASIS.BASIS_TB_MONITOR_CACHE t
+		select count(1) from BASIS_TB_MONITOR_CACHE t
 	]]>
 		<dynamic prepend="WHERE">
 			<isNotEmpty property="hostAddress" prepend="and">
@@ -77,7 +77,7 @@
 			   t.decr_hits             as decrHits,
 			   t.conn_yields           as connYields,
 			   t.create_date           as createDate
-		  from BASIS.BASIS_TB_MONITOR_CACHE t
+		  from BASIS_TB_MONITOR_CACHE t
 	]]>
 		<dynamic prepend="WHERE">
 			<isNotEmpty property="hostAddress" prepend="and">

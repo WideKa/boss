@@ -17,6 +17,12 @@ public class Trade extends SearchInfo {
 
 	private String tradeDate;
 
+	private String like;
+
+	private String likeDate;
+
+	private String modifyUser;
+
 	// >>>>>>>>>>以下是辅助属性<<<<<<<<<<
 
 	private String itemName;
@@ -45,6 +51,30 @@ public class Trade extends SearchInfo {
 
 	public void setTradeDate(String tradeDate) {
 		this.tradeDate = tradeDate;
+	}
+
+	public String getLike() {
+		return like;
+	}
+
+	public void setLike(String like) {
+		this.like = like;
+	}
+
+	public String getLikeDate() {
+		return likeDate;
+	}
+
+	public void setLikeDate(String likeDate) {
+		this.likeDate = likeDate;
+	}
+
+	public String getModifyUser() {
+		return modifyUser;
+	}
+
+	public void setModifyUser(String modifyUser) {
+		this.modifyUser = modifyUser;
 	}
 
 	public String getItemName() {
