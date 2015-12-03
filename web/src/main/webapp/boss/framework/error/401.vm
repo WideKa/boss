@@ -28,7 +28,7 @@
                 </div>
           	</div>
         </div>
-		#parse("/client/framework/footer.vm")
+		#parse("/boss/framework/footer.vm")
         <script languang="text/javascript">
         function home() {
     		var goto = encodeURIComponent("$!{goto}");
