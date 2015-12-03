@@ -16,11 +16,8 @@
 		#if($!stringUtil.isEmpty($!{trade.tradeCode}))
 			无
 		#else
+			<img src="$!{env.imgUrl}/image/trade/pic.png" class="img-responsive" />
     		<div class="panel panel-info">
-    			<div class="panel-heading">
-    				<strong>农夫茶舍</strong>
-    			</div>
-				<img src="$!{env.imgUrl}/image/trade/pic.png" class="img-responsive" />
     			<table class="table table-striped">
                     <tbody>
     					<tr>
