@@ -16,8 +16,8 @@ function promgtMsg() {
 	var failResult = hideFrame.contentWindow.failResult;
 	var successResult = hideFrame.contentWindow.successResult;
 	if (failResult != undefined && failResult != "") {
-		alert(failResult);
+		window.location.reload();
 	} else if (successResult != undefined) {
-		alert(successResult);
+		window.location.reload();
 	}
 }

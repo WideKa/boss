@@ -16,16 +16,13 @@
 		#if($!stringUtil.isEmpty($!{trade.tradeCode}))
 			无
 		#else
-    		<div class="panel panel-success">
+    		<div class="panel panel-info">
     			<div class="panel-heading">
-    				农夫茶舍<strong class="pull-right">用心做好茶</strong>
+    				<strong>农夫茶舍</strong>
     			</div>
+				<img src="$!{env.imgUrl}/image/trade/pic.png" class="img-responsive" />
     			<table class="table table-striped">
                     <tbody>
-    					<tr>
-    						<td class="text-center">订单编号</td>
-    						<td>$!{trade.tradeNo}</td>
-    					</tr>
     					<tr>
     						<td class="text-center">商品名称</td>
     						<td>$!{trade.itemName}</td>
@@ -40,13 +37,11 @@
     		#if($!stringUtil.isEmpty($!{trade.like}))
     		<div class="text-center">
     			<a class="btn btn-default btn-lg" id="btn" data-loading-text="正在发送数据..." href="javascript:like();">
-    				<i class="fa fa-thumbs-o-up" style="color: green; font-size: 30px;"></i> 点赞
+    				<i class="fa fa-thumbs-o-up" style="color: green; font-size: 25px;"></i> 赞
     			</a>
             </div>
     		#end
 		#end
-		
-		#parse("/boss/framework/footer.vm")
 		
 		<form class="" role="form" method="post">
 			<input type="hidden" name="tradeCode" value="$!{trade.tradeCode}"></input>
