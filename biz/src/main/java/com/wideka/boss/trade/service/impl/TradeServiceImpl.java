@@ -155,6 +155,47 @@ public class TradeServiceImpl implements ITradeService {
 		return result;
 	}
 
+	@Override
+	public Trade getTrade(String tradeCode) {
+		if (StringUtils.isBlank(tradeCode)) {
+			return null;
+		}
+
+		Trade trade = new Trade();
+		trade.setTradeCode(tradeCode.trim());
+
+		try {
+			return tradeDao.getTrade(trade);
+		} catch (Exception e) {
+			logger.error(LogUtil.parserBean(trade), e);
+		}
+
+		return null;
+	}
+
+	@Override
+	public BooleanResult like(String tradeCode, String modifyUser) {
+		BooleanResult result = new BooleanResult();
+		result.setResult(false);
+
+		Trade trade = new Trade();
+		trade.setLike("Y");
+
+		if (StringUtils.isBlank(tradeCode)) {
+			result.setCode("交易编号不能为空。");
+			return result;
+		}
+		trade.setTradeCode(tradeCode.trim());
+
+		if (StringUtils.isBlank(modifyUser)) {
+			result.setCode("点赞信息不能为空。");
+			return result;
+		}
+		trade.setModifyUser(modifyUser.trim());
+
+		return updateTrade(trade);
+	}
+
 	public ITradeDao getTradeDao() {
 		return tradeDao;
 	}

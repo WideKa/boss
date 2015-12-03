@@ -13,6 +13,8 @@ public class Trade extends SearchInfo {
 
 	private Long tradeId;
 
+	private String tradeCode;
+
 	private String tradeNo;
 
 	private String tradeDate;
@@ -35,6 +37,14 @@ public class Trade extends SearchInfo {
 
 	public void setTradeId(Long tradeId) {
 		this.tradeId = tradeId;
+	}
+
+	public String getTradeCode() {
+		return tradeCode;
+	}
+
+	public void setTradeCode(String tradeCode) {
+		this.tradeCode = tradeCode;
 	}
 
 	public String getTradeNo() {

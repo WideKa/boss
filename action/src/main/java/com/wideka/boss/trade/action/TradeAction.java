@@ -7,6 +7,7 @@ import com.wideka.boss.api.trade.bo.Trade;
 import com.wideka.boss.framework.action.BaseAction;
 import com.wideka.boss.framework.bo.BooleanResult;
 import com.wideka.boss.framework.struts.annotations.JsonResult;
+import com.wideka.boss.framework.util.ClientUtil;
 
 /**
  * 
@@ -30,6 +31,13 @@ public class TradeAction extends BaseAction {
 	private String tradeDate;
 
 	private String result;
+
+	/**
+	 * 二维码.
+	 */
+	private String tradeCode;
+
+	private Trade trade;
 
 	@JsonResult(field = "tradeList", include = { "tradeId", "tradeNo", "tradeDate", "like", "likeDate", "itemName",
 		"sellerName" }, total = "total")
@@ -68,6 +76,24 @@ public class TradeAction extends BaseAction {
 		}
 
 		return JSON_RESULT;
+	}
+
+	public String detail() {
+		trade = tradeService.getTrade(tradeCode);
+
+		return SUCCESS;
+	}
+
+	public String like() {
+		BooleanResult res = tradeService.like(tradeCode, ClientUtil.getIpAddr(this.getServletRequest()));
+
+		if (res.getResult()) {
+			this.setSuccessMessage(res.getCode());
+		} else {
+			this.setFailMessage(res.getCode());
+		}
+
+		return RESULT_MESSAGE;
 	}
 
 	public ITradeService getTradeService() {
@@ -124,6 +150,22 @@ public class TradeAction extends BaseAction {
 
 	public void setResult(String result) {
 		this.result = result;
+	}
+
+	public String getTradeCode() {
+		return tradeCode;
+	}
+
+	public void setTradeCode(String tradeCode) {
+		this.tradeCode = tradeCode;
+	}
+
+	public Trade getTrade() {
+		return trade;
+	}
+
+	public void setTrade(Trade trade) {
+		this.trade = trade;
 	}
 
 }

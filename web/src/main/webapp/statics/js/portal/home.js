@@ -113,7 +113,14 @@ function initTable() {
 						}, {
 							field : 'like',
 							title : '评价',
-							align : 'center'
+							align : 'center',
+							formatter : function(value, row, index) {
+								if (value == 'Y') {
+									return "赞";
+								} else {
+									return "";
+								}
+							}
 						}, {
 							field : 'likeDate',
 							title : '评价时间',

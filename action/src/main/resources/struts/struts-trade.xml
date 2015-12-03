@@ -17,5 +17,12 @@
 			<interceptor-ref name="authenticationStack" />
 		</action>
 		
+		<action name="detail" class="tradeAction" method="detail">
+			<result name="success">/boss/trade/detail.vm</result>
+		</action>
+		
+		<action name="like" class="tradeAction" method="like">
+		</action>
+		
 	</package>
 </struts>

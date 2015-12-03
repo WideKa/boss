@@ -44,4 +44,19 @@ public interface ITradeService {
 	 */
 	BooleanResult updateTradeDate(String tradeId, String tradeDate, String modifyUser);
 
+	/**
+	 * 
+	 * @param tradeCode
+	 * @return
+	 */
+	Trade getTrade(String tradeCode);
+
+	/**
+	 * 
+	 * @param tradeCode
+	 * @param modifyUser
+	 * @return
+	 */
+	BooleanResult like(String tradeCode, String modifyUser);
+
 }

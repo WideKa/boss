@@ -10,7 +10,6 @@
 	<![CDATA[
 		SELECT COUNT(1)
 		  FROM basis_tb_trade t
-		 WHERE t.STATE= 'U'
 	]]>
 	</select>
 	
@@ -26,8 +25,8 @@
 		  FROM basis_tb_trade t,
 			   basis_tb_item p,
 			   basis_tb_seller q
-		 WHERE t.ITEM_ID= p.ITEM_ID
-		   AND p.SELLER_ID= q.SELLER_ID
+		 WHERE t.ITEM_ID = p.ITEM_ID
+		   AND p.SELLER_ID = q.SELLER_ID
 	]]>
 		<dynamic>
 			<isEmpty property="sort">
@@ -60,10 +59,39 @@
 				<![CDATA[ t.trade_date = STR_TO_DATE( #tradeDate#, '%Y-%m-%d') ]]>
 				</isNotEqual>
 			</isNotEmpty>
+			<isNotEmpty property="like">
+			<![CDATA[
+				, t.like = #like# 
+				, t.like_date = NOW()
+			]]>
+			</isNotEmpty>
+			<isNotEmpty property="tradeId">
+			<![CDATA[ WHERE t.trade_id = #tradeId# ]]>
+			</isNotEmpty>
+			<isEmpty property="tradeId">
+			<![CDATA[ WHERE t.trade_code = #tradeCode# ]]>
+			</isEmpty>
+			<isNotEmpty property="like">
+			<![CDATA[ AND t.like is null ]]>
+			</isNotEmpty>
 		</dynamic>
-	<![CDATA[
-		 WHERE t.trade_id = #tradeId#
-	]]>
 	</update>
+	
+	<select id="getTrade" parameterClass="trade" resultClass="trade">
+	<![CDATA[
+		SELECT t.TRADE_ID AS tradeId,
+			   t.TRADE_CODE AS tradeCode,
+			   t.TRADE_NO AS tradeNo,
+			   p.ITEM_NAME AS itemName,
+			   q.SELLER_NAME AS sellerName,
+			   t.LIKE
+		  FROM basis_tb_trade t,
+			   basis_tb_item p,
+			   basis_tb_seller q
+		 WHERE t.ITEM_ID = p.ITEM_ID
+		   AND p.SELLER_ID = q.SELLER_ID
+		   AND t.TRADE_CODE = #tradeCode#
+	]]>
+	</select>
 	
 </sqlMap>
