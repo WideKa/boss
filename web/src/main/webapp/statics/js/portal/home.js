@@ -38,6 +38,7 @@ function initTable() {
 						}, {
 							field : 'tradeNo',
 							title : '交易单号',
+							sortable : true,
 							align : 'center',
 							formatter : function(value, row, index) {
 								if (value == undefined) {
@@ -77,6 +78,7 @@ function initTable() {
 						}, {
 							field : 'tradeDate',
 							title : '交易时间',
+							sortable : true,
 							align : 'center',
 							formatter : function(value, row, index) {
 								if (value == undefined) {

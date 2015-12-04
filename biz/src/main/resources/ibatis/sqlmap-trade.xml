@@ -12,6 +12,15 @@
 		  FROM basis_tb_trade t
 		 WHERE t.STATE = 'U'
 	]]>
+		<dynamic>
+			<isNotEmpty property="search" prepend="and">
+			<![CDATA[
+				  ( t.trade_id like #search,handler=wildcard# escape '\\'
+				 or t.trade_code like #search,handler=wildcard# escape '\\'
+				 or t.trade_no like #search,handler=wildcard# escape '\\' )
+			]]>
+			</isNotEmpty>
+		</dynamic>
 	</select>
 	
 	<select id="getTradeList" parameterClass="trade" resultClass="trade">
@@ -32,11 +41,18 @@
 		   AND t.STATE = 'U'
 	]]>
 		<dynamic>
+			<isNotEmpty property="search" prepend="and">
+			<![CDATA[
+				  ( t.trade_id like #search,handler=wildcard# escape '\\'
+				 or t.trade_code like #search,handler=wildcard# escape '\\'
+				 or t.trade_no like #search,handler=wildcard# escape '\\' )
+			]]>
+			</isNotEmpty>
 			<isEmpty property="sort">
-			<![CDATA[ ORDER BY TRADE_ID desc ]]>
+			<![CDATA[ ORDER BY TRADE_ID asc ]]>
 			</isEmpty>
 			<isNotEmpty property="sort">
-			<![CDATA[ ORDER BY $sort$ $order$ ]]>
+			<![CDATA[ ORDER BY $sort$ $order$, TRADE_ID asc ]]>
 			</isNotEmpty>
 		</dynamic>
 	<![CDATA[
