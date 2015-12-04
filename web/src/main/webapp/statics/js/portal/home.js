@@ -133,7 +133,9 @@ function initTable() {
 							align : 'center'
 						}]],
 		queryParams : function(params) {
-			params.search = encodeURIComponent(params.search);
+			if (params.search != undefined) {
+				params.search = encodeURIComponent(params.search);
+			}
 			return params;
 		}
 	});
