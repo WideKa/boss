@@ -48,6 +48,7 @@
 		#JSM(["jquery", "jquery.cookie", "bootstrap", "bootstrap.table", "bootstrap.table.editable", "bootstrap3.editable"])
 		#JS_ENV_VAL()
 		<script>
+		var deta = '$!{dateUtil.getNowDateStr()}';
         </script>
 		<script type="text/javascript" src="$!{env.imgUrl}/js/portal/home.js"></script>
 	</body>

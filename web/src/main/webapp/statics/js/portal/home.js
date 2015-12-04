@@ -1,4 +1,4 @@
-var $table = $('#table'), selections = [];
+var $table = $('#table');
 
 function initTable() {
 	$table.bootstrapTable({
@@ -90,6 +90,7 @@ function initTable() {
 							editable : {
 								type : 'text',
 								title : '交易时间',
+								defaultValue : deta,
 								validate : function(value) {
 									return '';
 								},
@@ -146,18 +147,10 @@ function initTable() {
 }
 
 function responseHandler(res) {
-	$.each(res.rows, function(i, row) {
-				row.state = $.inArray(row.id, selections) !== -1;
-			});
 	return res;
 }
 
 function detailFormatter(index, row) {
-	var html = [];
-	$.each(row, function(key, value) {
-				html.push('<p><b>' + key + ':</b> ' + value + '</p>');
-			});
-	return html.join('');
 }
 
 function getHeight() {
