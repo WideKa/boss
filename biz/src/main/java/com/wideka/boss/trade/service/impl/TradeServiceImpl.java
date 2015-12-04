@@ -1,6 +1,5 @@
 package com.wideka.boss.trade.service.impl;
 
-import java.io.IOException;
 import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
@@ -11,7 +10,6 @@ import com.wideka.boss.framework.bo.BooleanResult;
 import com.wideka.boss.framework.log.Logger4jCollection;
 import com.wideka.boss.framework.log.Logger4jExtend;
 import com.wideka.boss.framework.util.DateUtil;
-import com.wideka.boss.framework.util.EncryptUtil;
 import com.wideka.boss.framework.util.LogUtil;
 import com.wideka.boss.framework.util.UUIDUtil;
 import com.wideka.boss.trade.dao.ITradeDao;
@@ -209,17 +207,10 @@ public class TradeServiceImpl implements ITradeService {
 			return result;
 		}
 
+		trade.setTradeCode(UUIDUtil.generate());
+
 		if (StringUtils.isBlank(trade.getItemId())) {
 			result.setCode("商品信息不能为空。");
-			return result;
-		}
-
-		try {
-			trade.setTradeCode(EncryptUtil.encryptMD5(UUIDUtil.generate()));
-		} catch (IOException e) {
-			logger.error(e);
-
-			result.setCode("生成交易二维码失败。");
 			return result;
 		}
 
