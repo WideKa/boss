@@ -59,4 +59,12 @@ public interface ITradeService {
 	 */
 	BooleanResult like(String tradeCode, String modifyUser);
 
+	/**
+	 * 
+	 * @param trade
+	 * @param modifyUser
+	 * @return
+	 */
+	BooleanResult createTrade(Trade trade, String modifyUser);
+
 }

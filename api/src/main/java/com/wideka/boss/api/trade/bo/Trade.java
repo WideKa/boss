@@ -15,6 +15,8 @@ public class Trade extends SearchInfo {
 
 	private String tradeCode;
 
+	private String itemId;
+
 	private String tradeNo;
 
 	private String tradeDate;
@@ -45,6 +47,14 @@ public class Trade extends SearchInfo {
 
 	public void setTradeCode(String tradeCode) {
 		this.tradeCode = tradeCode;
+	}
+
+	public String getItemId() {
+		return itemId;
+	}
+
+	public void setItemId(String itemId) {
+		this.itemId = itemId;
 	}
 
 	public String getTradeNo() {

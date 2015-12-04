@@ -24,5 +24,9 @@
 		<action name="like" class="tradeAction" method="like">
 		</action>
 		
+		<action name="create" class="tradeAction" method="create">
+			<interceptor-ref name="authenticationStack" />
+		</action>
+		
 	</package>
 </struts>

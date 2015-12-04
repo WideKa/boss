@@ -39,8 +39,8 @@ public class TradeAction extends BaseAction {
 
 	private Trade trade;
 
-	@JsonResult(field = "tradeList", include = { "tradeId", "tradeNo", "tradeDate", "like", "likeDate", "itemName",
-		"sellerName" }, total = "total")
+	@JsonResult(field = "tradeList", include = { "tradeId", "tradeCode", "tradeNo", "tradeDate", "like", "likeDate",
+		"itemName", "sellerName" }, total = "total")
 	public String getTradeJsonList() {
 		Trade t = new Trade();
 		t = getSearchInfo(t);
@@ -92,6 +92,22 @@ public class TradeAction extends BaseAction {
 		} else {
 			this.setFailMessage(res.getCode());
 		}
+
+		return RESULT_MESSAGE;
+	}
+
+	public String create() {
+		int c = 0;
+		Trade t = new Trade();
+		t.setItemId("1");
+		for (int i = 0; i < 10; i++) {
+			BooleanResult res = tradeService.createTrade(t, getUser().getUserId().toString());
+			if (res.getResult()) {
+				c++;
+			}
+		}
+
+		this.setSuccessMessage("成功创建 " + c + " 条交易数据。");
 
 		return RESULT_MESSAGE;
 	}

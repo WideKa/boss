@@ -16,7 +16,7 @@ function initTable() {
 							align : 'center'
 						}, {
 							title : '交易信息',
-							colspan : 2,
+							colspan : 3,
 							align : 'center'
 						}, {
 							title : '买家信息',
@@ -30,6 +30,11 @@ function initTable() {
 							field : 'sellerName',
 							title : '卖家信息',
 							align : 'center'
+						}, {
+							field : 'tradeCode',
+							title : '二维码',
+							align : 'center',
+							width : 1
 						}, {
 							field : 'tradeNo',
 							title : '交易单号',
@@ -161,4 +166,28 @@ function getHeight() {
 
 $(function() {
 			initTable();
+
+			$('#hideFrame').bind('load', promgtMsg);
 		});
+
+function create() {
+	$('#btn').button('loading');
+
+	var form = window.document.forms[0];
+	form.action = appUrl + "/trade/create.htm";
+	form.target = "hideFrame";
+	form.submit();
+}
+
+function promgtMsg() {
+	var hideFrame = document.getElementById("hideFrame");
+	var failResult = hideFrame.contentWindow.failResult;
+	var successResult = hideFrame.contentWindow.successResult;
+	if (failResult != undefined && failResult != "") {
+		alert(failResult);
+	} else if (successResult != undefined) {
+		$('#table').bootstrapTable('refresh');
+	}
+
+	$('#btn').button('reset');
+}

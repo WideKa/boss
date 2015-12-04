@@ -39,4 +39,11 @@ public interface ITradeDao {
 	 */
 	Trade getTrade(Trade trade);
 
+	/**
+	 * 
+	 * @param trade
+	 * @return
+	 */
+	Long createTrade(Trade trade);
+
 }

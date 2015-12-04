@@ -14,29 +14,37 @@
 	<body>
 		<div class="container">
             <h1>交易清算系统</h1>
-                <table id="table"
-                       data-toolbar="#toolbar"
-                       data-search="true"
-                       data-show-refresh="true"
-                       data-show-toggle="false"
-                       data-show-columns="false"
-                       data-show-export="false"
-                       data-detail-view="false"
-                       data-detail-formatter="detailFormatter"
-                       data-minimum-count-columns="2"
-                       data-show-pagination-switch="true"
-                       data-pagination="true"
-                       data-id-field="tradeId"
-                       data-page-list="[10, 25, 50, 100, ALL]"
-                       data-show-footer="false"
-                       data-side-pagination="server"
-                       data-url="$!{env.appUrl}/trade/data.htm"
-                       data-response-handler="responseHandler">
-                </table>
+			<div id="toolbar">
+                <a class="btn btn-success" id="btn" data-loading-text="正在执行操作..." href="javascript:create();">
+                    <i class="glyphicon glyphicon-plus"></i> 批量新增数据
+                </a>
+            </div>
+            <table id="table"
+                   data-toolbar="#toolbar"
+                   data-search="true"
+                   data-show-refresh="true"
+                   data-show-toggle="false"
+                   data-show-columns="false"
+                   data-show-export="false"
+                   data-detail-view="false"
+                   data-detail-formatter="detailFormatter"
+                   data-minimum-count-columns="2"
+                   data-show-pagination-switch="true"
+                   data-pagination="true"
+                   data-id-field="tradeId"
+                   data-page-list="[10, 25, 50, 100, ALL]"
+                   data-show-footer="false"
+                   data-side-pagination="server"
+                   data-url="$!{env.appUrl}/trade/data.htm"
+                   data-response-handler="responseHandler">
+            </table>
         </div>
 		
 		#parse("/boss/framework/footer.vm")
 		
+		<form class="" role="form" method="post"></form>
+		
+		<iframe id="hideFrame" name="hideFrame" style="display:none"></iframe>
 		#JSM(["jquery", "jquery.cookie", "bootstrap", "bootstrap.table", "bootstrap.table.editable", "bootstrap3.editable"])
 		#JS_ENV_VAL()
 		<script>
