@@ -131,7 +131,11 @@ function initTable() {
 							field : 'likeDate',
 							title : '评价时间',
 							align : 'center'
-						}]]
+						}]],
+		queryParams : function(params) {
+			params.search = encodeURIComponent(params.search);
+			return params;
+		}
 	});
 
 	// sometimes footer render error.
