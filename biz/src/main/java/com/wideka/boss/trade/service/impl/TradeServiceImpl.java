@@ -198,6 +198,29 @@ public class TradeServiceImpl implements ITradeService {
 	}
 
 	@Override
+	public BooleanResult unlike(String tradeCode, String modifyUser) {
+		BooleanResult result = new BooleanResult();
+		result.setResult(false);
+
+		Trade trade = new Trade();
+		trade.setLike("N");
+
+		if (StringUtils.isBlank(tradeCode)) {
+			result.setCode("交易编号不能为空。");
+			return result;
+		}
+		trade.setTradeCode(tradeCode.trim());
+
+		if (StringUtils.isBlank(modifyUser)) {
+			result.setCode("差评信息不能为空。");
+			return result;
+		}
+		trade.setModifyUser(modifyUser.trim());
+
+		return updateTrade(trade);
+	}
+
+	@Override
 	public BooleanResult createTrade(Trade trade, String modifyUser) {
 		BooleanResult result = new BooleanResult();
 		result.setResult(false);

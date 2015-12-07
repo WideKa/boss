@@ -3,10 +3,19 @@ $(document).ready(function() {
 		});
 
 function like() {
-	$('#btn').button('loading');
+	$('#btn1').button('loading');
 
 	var form = window.document.forms[0];
 	form.action = appUrl + "/trade/like.htm";
+	form.target = "hideFrame";
+	form.submit();
+}
+
+function unlike() {
+	$('#btn2').button('loading');
+
+	var form = window.document.forms[0];
+	form.action = appUrl + "/trade/unlike.htm";
 	form.target = "hideFrame";
 	form.submit();
 }

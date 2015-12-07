@@ -96,6 +96,18 @@ public class TradeAction extends BaseAction {
 		return RESULT_MESSAGE;
 	}
 
+	public String unlike() {
+		BooleanResult res = tradeService.unlike(tradeCode, ClientUtil.getIpAddr(this.getServletRequest()));
+
+		if (res.getResult()) {
+			this.setSuccessMessage(res.getCode());
+		} else {
+			this.setFailMessage(res.getCode());
+		}
+
+		return RESULT_MESSAGE;
+	}
+
 	public String create() {
 		int c = 0;
 		Trade t = new Trade();

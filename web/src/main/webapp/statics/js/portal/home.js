@@ -123,6 +123,8 @@ function initTable() {
 							formatter : function(value, row, index) {
 								if (value == 'Y') {
 									return "赞";
+								} else if (value == 'N') {
+									return "差评";
 								} else {
 									return "";
 								}

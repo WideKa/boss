@@ -61,6 +61,14 @@ public interface ITradeService {
 
 	/**
 	 * 
+	 * @param tradeCode
+	 * @param modifyUser
+	 * @return
+	 */
+	BooleanResult unlike(String tradeCode, String modifyUser);
+
+	/**
+	 * 
 	 * @param trade
 	 * @param modifyUser
 	 * @return

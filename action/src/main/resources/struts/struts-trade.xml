@@ -21,8 +21,9 @@
 			<result name="success">/boss/trade/detail.vm</result>
 		</action>
 		
-		<action name="like" class="tradeAction" method="like">
-		</action>
+		<action name="like" class="tradeAction" method="like"></action>
+				
+		<action name="unlike" class="tradeAction" method="unlike"></action>
 		
 		<action name="create" class="tradeAction" method="create">
 			<interceptor-ref name="authenticationStack" />
