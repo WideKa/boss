@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	<bean id="itemService" class="com.wideka.boss.item.service.impl.ItemServiceImpl">
+		<property name="itemDao" ref="itemDao" />
+	</bean>
+	<bean id="itemDao" class="com.wideka.boss.item.dao.impl.ItemDaoImpl" parent="baseDao" />
+	
+	<bean id="itemBatchService" class="com.wideka.boss.item.service.impl.ItemBatchServiceImpl">
+		<property name="itemService" ref="itemService" />
+		<property name="batchPicService" ref="batchPicService" />
+		<property name="itemBatchDao" ref="itemBatchDao" />
+	</bean>
+	<bean id="itemBatchDao" class="com.wideka.boss.item.dao.impl.ItemBatchDaoImpl" parent="baseDao" />
+	
+	<bean id="batchPicService" class="com.wideka.boss.item.service.impl.BatchPicServiceImpl">
+		<property name="batchPicDao" ref="batchPicDao" />
+	</bean>
+	<bean id="batchPicDao" class="com.wideka.boss.item.dao.impl.BatchPicDaoImpl" parent="baseDao" />
+	
+</beans>

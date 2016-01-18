@@ -18,4 +18,11 @@ public interface IBatchPicService {
 	 */
 	List<BatchPic> getBatchPicList(String batchId);
 
+	/**
+	 * 
+	 * @param batchId
+	 * @return
+	 */
+	List<BatchPic> getBatchPicList(Long batchId);
+
 }

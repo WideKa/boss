@@ -2,6 +2,7 @@ package com.wideka.boss.trade.action;
 
 import java.util.List;
 
+import com.wideka.boss.api.item.IItemBatchService;
 import com.wideka.boss.api.item.bo.ItemBatch;
 import com.wideka.boss.api.trade.ITradeService;
 import com.wideka.boss.api.trade.bo.Trade;
@@ -20,6 +21,8 @@ public class TradeAction extends BaseAction {
 	private static final long serialVersionUID = -3583761070404384603L;
 
 	private ITradeService tradeService;
+
+	private IItemBatchService itemBatchService;
 
 	private int total;
 
@@ -92,7 +95,9 @@ public class TradeAction extends BaseAction {
 		trade = tradeService.getTrade(tradeCode);
 
 		// 批次信息（图片）
-		// itemBatch
+		if (trade != null) {
+			itemBatch = itemBatchService.getItemBatch(trade.getBatchId());
+		}
 
 		return SUCCESS;
 	}
@@ -143,6 +148,14 @@ public class TradeAction extends BaseAction {
 
 	public void setTradeService(ITradeService tradeService) {
 		this.tradeService = tradeService;
+	}
+
+	public IItemBatchService getItemBatchService() {
+		return itemBatchService;
+	}
+
+	public void setItemBatchService(IItemBatchService itemBatchService) {
+		this.itemBatchService = itemBatchService;
 	}
 
 	public int getTotal() {

@@ -13,8 +13,7 @@ public class ItemBatchDaoImpl extends BaseDaoImpl implements IItemBatchDao {
 
 	@Override
 	public ItemBatch getItemBatch(ItemBatch itemBatch) {
-		// TODO Auto-generated method stub
-		return null;
+		return (ItemBatch) getSqlMapClientTemplate().queryForObject("item.batch.getItemBatch", itemBatch);
 	}
 
 }

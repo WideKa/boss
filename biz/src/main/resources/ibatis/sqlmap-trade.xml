@@ -31,13 +31,15 @@
 			   DATE_FORMAT(t.TRADE_DATE, '%Y-%m-%d') AS tradeDate,
 			   t.LIKE,
 			   DATE_FORMAT(t.LIKE_DATE, '%Y-%m-%d') AS likeDate,
-			   p.ITEM_NAME AS itemName,
-			   q.SELLER_NAME AS sellerName
+			   q.ITEM_NAME AS itemName,
+			   k.SELLER_NAME AS sellerName
 		  FROM basis_tb_trade t,
-			   basis_tb_item p,
-			   basis_tb_seller q
-		 WHERE t.ITEM_ID = p.ITEM_ID
-		   AND p.SELLER_ID = q.SELLER_ID
+			   basis_tb_item_batch p,
+			   basis_tb_item q,
+			   basis_tb_seller k
+		 WHERE t.BATCH_ID = p.BATCH_ID
+		   AND p.ITEM_ID = q.ITEM_ID
+		   AND q.SELLER_ID = k.SELLER_ID
 		   AND t.STATE = 'U'
 	]]>
 		<dynamic>
@@ -106,15 +108,10 @@
 		SELECT t.TRADE_ID AS tradeId,
 			   t.TRADE_CODE AS tradeCode,
 			   t.TRADE_NO AS tradeNo,
-			   p.ITEM_NAME AS itemName,
-			   q.SELLER_NAME AS sellerName,
+			   t.BATCH_ID AS batchId,
 			   t.LIKE
-		  FROM basis_tb_trade t,
-			   basis_tb_item p,
-			   basis_tb_seller q
-		 WHERE t.ITEM_ID = p.ITEM_ID
-		   AND p.SELLER_ID = q.SELLER_ID
-		   AND t.STATE = 'U'
+		  FROM basis_tb_trade t
+		 WHERE t.STATE = 'U'
 		   AND t.TRADE_CODE = #tradeCode#
 	]]>
 	</select>

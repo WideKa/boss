@@ -29,6 +29,10 @@ public class Trade extends SearchInfo {
 
 	// >>>>>>>>>>以下是辅助属性<<<<<<<<<<
 
+	private String itemName;
+
+	private String sellerName;
+
 	public Long getTradeId() {
 		return tradeId;
 	}
@@ -91,6 +95,22 @@ public class Trade extends SearchInfo {
 
 	public void setModifyUser(String modifyUser) {
 		this.modifyUser = modifyUser;
+	}
+
+	public String getItemName() {
+		return itemName;
+	}
+
+	public void setItemName(String itemName) {
+		this.itemName = itemName;
+	}
+
+	public String getSellerName() {
+		return sellerName;
+	}
+
+	public void setSellerName(String sellerName) {
+		this.sellerName = sellerName;
 	}
 
 }

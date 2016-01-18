@@ -13,10 +13,10 @@ import com.wideka.boss.item.dao.IBatchPicDao;
  */
 public class BatchPicDaoImpl extends BaseDaoImpl implements IBatchPicDao {
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<BatchPic> getBatchPicList(BatchPic batchPic) {
-		// TODO Auto-generated method stub
-		return null;
+		return getSqlMapClientTemplate().queryForList("item.batch.pic.getBatchPicList", batchPic);
 	}
 
 }

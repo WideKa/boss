@@ -16,4 +16,11 @@ public interface IItemBatchService {
 	 */
 	ItemBatch getItemBatch(String batchId);
 
+	/**
+	 * 
+	 * @param batchId
+	 * @return
+	 */
+	ItemBatch getItemBatch(Long batchId);
+
 }
