@@ -2,6 +2,7 @@ package com.wideka.boss.trade.action;
 
 import java.util.List;
 
+import com.wideka.boss.api.item.bo.ItemBatch;
 import com.wideka.boss.api.trade.ITradeService;
 import com.wideka.boss.api.trade.bo.Trade;
 import com.wideka.boss.framework.action.BaseAction;
@@ -37,7 +38,15 @@ public class TradeAction extends BaseAction {
 	 */
 	private String tradeCode;
 
+	/**
+	 * 交易.
+	 */
 	private Trade trade;
+
+	/**
+	 * 商品信息.
+	 */
+	private ItemBatch itemBatch;
 
 	@JsonResult(field = "tradeList", include = { "tradeId", "tradeCode", "tradeNo", "tradeDate", "like", "likeDate",
 		"itemName", "sellerName" }, total = "total")
@@ -79,7 +88,11 @@ public class TradeAction extends BaseAction {
 	}
 
 	public String detail() {
+		// 交易信息
 		trade = tradeService.getTrade(tradeCode);
+
+		// 批次信息（图片）
+		// itemBatch
 
 		return SUCCESS;
 	}
@@ -111,7 +124,7 @@ public class TradeAction extends BaseAction {
 	public String create() {
 		int c = 0;
 		Trade t = new Trade();
-		t.setItemId("1");
+		t.setBatchId(1L);
 		for (int i = 0; i < 10; i++) {
 			BooleanResult res = tradeService.createTrade(t, getUser().getUserId().toString());
 			if (res.getResult()) {
@@ -194,6 +207,14 @@ public class TradeAction extends BaseAction {
 
 	public void setTrade(Trade trade) {
 		this.trade = trade;
+	}
+
+	public ItemBatch getItemBatch() {
+		return itemBatch;
+	}
+
+	public void setItemBatch(ItemBatch itemBatch) {
+		this.itemBatch = itemBatch;
 	}
 
 }

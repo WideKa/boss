@@ -15,7 +15,7 @@ public class Trade extends SearchInfo {
 
 	private String tradeCode;
 
-	private String itemId;
+	private Long batchId;
 
 	private String tradeNo;
 
@@ -28,10 +28,6 @@ public class Trade extends SearchInfo {
 	private String modifyUser;
 
 	// >>>>>>>>>>以下是辅助属性<<<<<<<<<<
-
-	private String itemName;
-
-	private String sellerName;
 
 	public Long getTradeId() {
 		return tradeId;
@@ -49,12 +45,12 @@ public class Trade extends SearchInfo {
 		this.tradeCode = tradeCode;
 	}
 
-	public String getItemId() {
-		return itemId;
+	public Long getBatchId() {
+		return batchId;
 	}
 
-	public void setItemId(String itemId) {
-		this.itemId = itemId;
+	public void setBatchId(Long batchId) {
+		this.batchId = batchId;
 	}
 
 	public String getTradeNo() {
@@ -95,22 +91,6 @@ public class Trade extends SearchInfo {
 
 	public void setModifyUser(String modifyUser) {
 		this.modifyUser = modifyUser;
-	}
-
-	public String getItemName() {
-		return itemName;
-	}
-
-	public void setItemName(String itemName) {
-		this.itemName = itemName;
-	}
-
-	public String getSellerName() {
-		return sellerName;
-	}
-
-	public void setSellerName(String sellerName) {
-		this.sellerName = sellerName;
 	}
 
 }

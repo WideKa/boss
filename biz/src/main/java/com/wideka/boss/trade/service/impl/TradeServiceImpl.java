@@ -232,7 +232,7 @@ public class TradeServiceImpl implements ITradeService {
 
 		trade.setTradeCode(UUIDUtil.generate());
 
-		if (StringUtils.isBlank(trade.getItemId())) {
+		if (trade.getBatchId() == null) {
 			result.setCode("商品信息不能为空。");
 			return result;
 		}
