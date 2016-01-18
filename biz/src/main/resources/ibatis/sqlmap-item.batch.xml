@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="item.batch">
+	
+	<typeAlias alias="itemBatch" type="com.wideka.boss.api.item.bo.ItemBatch" />
+	
+	<select id="getItemBatch" parameterClass="itemBatch" resultClass="itemBatch">
+	<![CDATA[
+		SELECT t.BATCH_ID AS batchId,
+			   t.ITEM_ID AS itemId,
+			   t.BATCH_NO AS batchNo,
+			   DATE_FORMAT(t.PICK_DATE, '%Y-%m-%d') AS pickDate,
+			   DATE_FORMAT(t.FRIED_DATE, '%Y-%m-%d') AS friedDate,
+			   DATE_FORMAT(t.PACK_DATE, '%Y-%m-%d') AS packDate
+		  FROM basis_tb_item_batch t
+		 WHERE t.state = 'U'
+		   AND t.BATCH_ID = #batchId#
+	]]>
+	</select>
+	
+</sqlMap>

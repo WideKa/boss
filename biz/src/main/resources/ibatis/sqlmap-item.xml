@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="item">
+	
+	<typeAlias alias="item" type="com.wideka.boss.api.item.bo.Item" />
+	
+	<select id="getItem" parameterClass="item" resultClass="item">
+	<![CDATA[
+		SELECT t.ITEM_ID AS itemId,
+			   t.SELLER_ID AS sellerId,
+			   p.SELLER_NAME AS sellerName,
+			   t.ITEM_NO AS itemNo,
+			   t.ITEM_NAME AS itemName
+		  FROM basis_tb_item t,
+			   basis_tb_seller p
+		 WHERE t.SELLER_ID = p.SELLER_ID
+		   and t.state = 'U'
+		   AND t.ITEM_ID = #itemId#
+	]]>
+	</select>
+	
+</sqlMap>

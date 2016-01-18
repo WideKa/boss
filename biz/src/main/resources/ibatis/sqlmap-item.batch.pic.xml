@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="item.batch.pic">
+	
+	<typeAlias alias="batchPic" type="com.wideka.boss.api.item.bo.BatchPic" />
+	
+	<select id="getBatchPicList" parameterClass="batchPic" resultClass="batchPic">
+	<![CDATA[
+		SELECT t.PIC_ID AS picId,
+			   t.BATCH_ID AS batchId,
+			   t.PIC_URL AS picUrl
+		  FROM basis_tb_batch_pic t
+		 WHERE t.state = 'U'
+		   AND t.BATCH_ID = #batchId#
+	]]>
+	</select>
+	
+</sqlMap>
