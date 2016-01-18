@@ -9,6 +9,7 @@
         #CSSM(["font-awesome", "bootstrap"])
 		<style>
 		body { padding-bottom: 70px; }
+		.col-xs-4 { padding-right: 0; padding-left: 0; }
 		</style>
 		#UA()
 	</head>
@@ -16,21 +17,30 @@
 		#if($!stringUtil.isEmpty($!{trade.tradeCode}))
 			无
 		#else
-			<img src="$!{env.imgUrl}/image/trade/pic.png" class="img-responsive" />
-    		<div class="panel panel-info">
-    			<table class="table table-striped">
-                    <tbody>
-    					<tr>
-    						<td class="text-center">商品名称</td>
-    						<td>$!{trade.itemName}</td>
-    					</tr>
-    					<tr>
-    						<td class="text-center">卖家名称</td>
-    						<td>$!{trade.sellerName}</td>
-    					</tr>
-    				</tbody>
-    			</table>
-    		</div>
+			<div class="row">
+				<img src="$!{env.imgUrl}/image/trade/pic.png" class="img-responsive" />
+            </div>
+			<div class="row" style="margin-right: 0; margin-left: 0;">
+				#foreach($batchPic in $!{itemBatch.batchPicList})
+				<div class="col-xs-4"">
+					<div class="thumbnail" style="margin-bottom: 9px;"><img src="$!{batchPic.picUrl}" /></div>
+				</div>
+				#end
+			</div>
+			
+			<table class="table">
+                <tbody>
+					<tr>
+						<td class="text-center">商品名称</td>
+						<td>$!{itemBatch.item.itemName}</td>
+					</tr>
+					<tr>
+						<td class="text-center">卖家名称</td>
+						<td>$!{itemBatch.item.sellerName}</td>
+					</tr>
+				</tbody>
+			</table>
+			
     		#if($!stringUtil.isEmpty($!{trade.like}))
     		<div class="text-center">
     			<a class="btn btn-default btn-lg" id="btn1" data-loading-text="正在发送数据..." href="javascript:like();">
@@ -50,6 +60,6 @@
 		<iframe id="hideFrame" name="hideFrame" style="display:none"></iframe>
 		#JSM(["jquery", "bootstrap"])
 		#JS_ENV_VAL()
-		<script type="text/javascript" src="$!{env.imgUrl}/js/trade/detail.js?20151207"></script>
+		<script type="text/javascript" src="$!{env.imgUrl}/js/trade/detail.js?t=20151207"></script>
     </body>
 </html>
