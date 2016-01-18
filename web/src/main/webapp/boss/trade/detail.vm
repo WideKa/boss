@@ -31,19 +31,30 @@
 			<table class="table">
                 <tbody>
 					<tr>
-						<td class="text-center">商品名称</td>
-						<td>$!{itemBatch.item.itemName}</td>
+						<td class="text-center" style="width: 25%;">卖家名称：</td><td style="width: 25%;">$!{itemBatch.item.sellerName}</td>
+						<td class="text-center" style="width: 25%;">品名：</td><td style="width: 25%;">$!{itemBatch.item.itemName}</td>
+                    </tr>
+					<tr>
+						<td class="text-center">等级：</td><td>特级</td>
+						<td class="text-center">产地：</td><td>杭州西湖区</td>
 					</tr>
 					<tr>
-						<td class="text-center">卖家名称</td>
-						<td>$!{itemBatch.item.sellerName}</td>
+						<td class="text-center">采摘日期：</td><td>2016-01-01</td>
+						<td class="text-center">炒制日期：</td><td>2016-01-02</td>
+					</tr>
+					<tr>
+						<td class="text-center">包装日期：</td><td>2016-01-03</td>
+						<td class="text-center">发货日期：</td><td>2016-01-04</td>
+					</tr>
+					<tr>
+						<td class="text-center">送检报告：</td><td colspan="3">浙00001</td>
 					</tr>
 				</tbody>
 			</table>
 			
     		#if($!stringUtil.isEmpty($!{trade.like}))
     		<div class="text-center">
-    			<a class="btn btn-default btn-lg" id="btn1" data-loading-text="正在发送数据..." href="javascript:like();">
+    			<a class="btn btn-default btn-lg" style="margin-right: 10px;" id="btn1" data-loading-text="正在发送数据..." href="javascript:like();">
     				<i class="fa fa-thumbs-o-up" style="color: green; font-size: 25px;"></i> 点赞
     			</a>
 				<a class="btn btn-default btn-lg" id="btn2" data-loading-text="正在发送数据..." href="javascript:unlike();">
