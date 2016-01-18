@@ -7,6 +7,7 @@
 	
 	<bean id="tradeAction" class="com.wideka.boss.trade.action.TradeAction" parent="baseAction" scope="request">
 		<property name="tradeService" ref="tradeService" />
+		<property name="itemBatchService" ref="itemBatchService" />
 	</bean>
 	
 	<bean id="tradeService" class="com.wideka.boss.trade.service.impl.TradeServiceImpl">
