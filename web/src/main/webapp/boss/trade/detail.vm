@@ -9,7 +9,7 @@
         #CSSM(["font-awesome", "bootstrap"])
 		<style>
 		body { padding-bottom: 70px; }
-		.col-xs-4 { padding-right: 0; padding-left: 0; }
+		.col-xs-6 { padding-right: 0; padding-left: 0; }
 		</style>
 		#UA()
 	</head>
@@ -18,14 +18,15 @@
 			无
 		#else
 			<div class="row">
-				<img src="$!{env.imgUrl}/image/trade/pic.png" class="img-responsive" />
+				<img src="$!{env.imgUrl}/image/trade/pic.jpg" class="img-responsive" />
             </div>
 			<div class="row" style="margin-right: 0; margin-left: 0;">
-				#foreach($batchPic in $!{itemBatch.batchPicList})
-				<div class="col-xs-4"">
-					<div class="thumbnail" style="margin-bottom: 9px;"><img src="$!{batchPic.picUrl}" /></div>
+				<div class="col-xs-6">
+					<div class="thumbnail" style="margin-bottom: 9px;"><img src="$!{env.imgUrl}/image/trade/1.jpg" /></div>
 				</div>
-				#end
+				<div class="col-xs-6">
+					<div class="thumbnail" style="margin-bottom: 9px;"><img src="$!{env.imgUrl}/image/trade/2.jpg" /></div>
+				</div>
 			</div>
 			
 			<table class="table">
@@ -35,19 +36,19 @@
 						<td class="text-center" style="width: 25%;">品名：</td><td style="width: 25%;">$!{itemBatch.item.itemName}</td>
                     </tr>
 					<tr>
-						<td class="text-center">等级：</td><td>特级</td>
-						<td class="text-center">产地：</td><td>杭州西湖区</td>
+						<td class="text-center">等级：</td><td>一级</td>
+						<td class="text-center">产地：</td><td>龙坞</td>
 					</tr>
 					<tr>
-						<td class="text-center">采摘日期：</td><td>2016-01-01</td>
-						<td class="text-center">炒制日期：</td><td>2016-01-02</td>
+						<td class="text-center">采摘日期：</td><td>2015</td>
+						<td class="text-center">炒制日期：</td><td>2015</td>
 					</tr>
 					<tr>
-						<td class="text-center">包装日期：</td><td>2016-01-03</td>
-						<td class="text-center">发货日期：</td><td>2016-01-04</td>
+						<td class="text-center">包装日期：</td><td>2016</td>
+						<td class="text-center">发货日期：</td><td>2016</td>
 					</tr>
 					<tr>
-						<td class="text-center">送检报告：</td><td colspan="3">浙00001</td>
+						<td class="text-center">送检报告：</td><td colspan="3"></td>
 					</tr>
 				</tbody>
 			</table>
