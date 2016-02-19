@@ -17,7 +17,7 @@
 		#if($!stringUtil.isEmpty($!{trade.tradeCode}))
 			无
 		#else
-			<div class="row">
+			<div class="row" style="margin-right: 0; margin-left: 0;">
 				<img src="$!{env.imgUrl}/image/trade/pic.jpg" class="img-responsive" />
             </div>
 			<div class="row" style="margin-right: 0; margin-left: 0;">
